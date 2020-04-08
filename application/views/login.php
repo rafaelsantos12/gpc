@@ -1,6 +1,6 @@
 
 <div class="wrapperlogin">
-    <form class="form-signin" method="post" action="<?php echo base_url();?>restrict/ajax_login" id="login_form">
+    <form class="form-signin" method="post" id="login_form">
     <center><img src="<?php echo base_url();?>public/img/icon-login.png" width="200" height="200"></center>       
       <h2 class="form-signin-heading"></h2>
       <input type="text" class="form-control" name="username" placeholder="Usuário"  autofocus autocomplete="off" id="username"/>

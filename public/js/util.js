@@ -1,4 +1,4 @@
-const BASE_URL = "localhost/gpc";
+const BASE_URL = "http://localhost/gpc/";
 
 
 
@@ -17,5 +17,5 @@ function showErrors(error_list){
 }
 
 function loadingImg(message=""){
-    return "< i class='fa fa-cicle-o-notch fa-spin'></i> " + message
+    return "<i class='fa fa-cicle-o-notch fa-spin'></i> " + message
 }
