@@ -9,8 +9,8 @@ class Users_model extends CI_Model{
 
     public function get_users_data($user_login){
         $this->db
-            ->select("codigo, nome, usuario, senha, repita_senha, tipo_usuario")
-            ->from ("usuario")
+            ->select("codigo, nome, senha, repita_senha, tipo_usuario")
+            ->from("usuario")
             ->where("usuario", $user_login);
 
             $result= $this->db->get();

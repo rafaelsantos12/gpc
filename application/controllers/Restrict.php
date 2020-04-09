@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Restrict extends CI_Controller {
@@ -52,7 +53,7 @@ class Restrict extends CI_Controller {
 				$user_id = $result->codigo;
 				$password_hash = $result->senha;
 				if(password_verify($password, $password_hash)){
-					$this->session->set_userdata("usuario", $user_id);
+					$this->session->set_userdata("codigo", $user_id);
 				} else{
 					$json["status"] = 0;
 				}
