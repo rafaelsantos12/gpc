@@ -10,7 +10,7 @@ class Template {
 			$CI->load->view('template/header',$data);
 
 			//Load Navbar
-			/* $CI->load->view('template/siderbar',$data); */
+			$CI->load->view('template/siderbar',$data);
 			// Load content
 			$CI->load->view($view,$data);
  

@@ -7,9 +7,9 @@ class Users_model extends CI_Model{
         $this->load->database();
     }
 
-    public function get_users_data($user_login){
+    public function get_user_data($user_login){
         $this->db
-            ->select("codigo, nome, senha, repita_senha, tipo_usuario")
+            ->select("codigo, nome,usuario, senha, repita_senha, tipo_usuario")
             ->from("usuario")
             ->where("usuario", $user_login);
 

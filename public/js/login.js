@@ -1,20 +1,25 @@
 $(function(){
+
         $("#login_form").submit(function(){
+            
               $.ajax({
-                type: "post",
+                type: "POST",
                 url: BASE_URL + "restrict/ajax_login",
-                dataType: "json ",
+                dataType: "json",
                 data: $(this).serialize(),
                 beforeSend: function(){
+                   
                     clearErrors();
-                    $("#bn_login").parent().siblings(".help-block").html(loadingImg("Verifiando..."));
+                    $("#btn_login").parent().siblings(".help-block").html(loadingImg("Verificando..."));  
                 },
-                sucess: function(json){
-                    if(json["status"] == 1){
-                        $("#bn_login").parent().siblings(".help-block").html(loadingImg("Logando..."));
-                        window.location = BASE_URL + "home";   
+                success: function(json){
+
+                    if(json["status"] == 1) {
+                        clearErrors();
+                        $("#btn_login").parent().siblings(".help-block").html(loadingImg("Logando..."));
+                        window.location = BASE_URL + "home"; 
                      }else{
-                         showErrors(json["erro_list"]);
+                         showErrors(json["error_list"]);
                      }
                },
                error: function(response){
@@ -25,6 +30,4 @@ $(function(){
 
               return false;
         })
-
-
 })

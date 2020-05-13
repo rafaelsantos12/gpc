@@ -24,9 +24,9 @@ class Restrict extends CI_Controller {
 		}	
 	}
 
-	public function logoff(){
+	public function logoff() {
 		$this->session->sess_destroy();
-		header("location:" . base_url() . "restrict" );
+		header("Location: " . base_url() . "restrict");
 	}
 
 
@@ -42,18 +42,21 @@ class Restrict extends CI_Controller {
 
 		$username = $this->input->post("username");
 		$password = $this->input->post("password");
-
+		
+	
 		if(empty($username)){
 			$json["status"] = 0;
 			$json["error_list"]["#username"] = "Usuário não pode ser vazio";
 		} else{
 			$this->load->model("users_model");
-			$result = $this->users_model->get_users_data($username);
+			$result = $this->users_model->get_user_data($username);
+		
 			if($result){
 				$user_id = $result->codigo;
 				$password_hash = $result->senha;
+
 				if(password_verify($password, $password_hash)){
-					$this->session->set_userdata("codigo", $user_id);
+					$this->session->set_userdata("user_id", $user_id);
 				} else{
 					$json["status"] = 0;
 				}
@@ -61,11 +64,11 @@ class Restrict extends CI_Controller {
 				$json["status"] = 0;
 			}
 
-			if ($json["status"] = 0){
-				$json["status"]["#btn_login"] = "Usuário e /ou senha incorretos!"; 
+			if ($json["status"] == 0){
+				$json["error_list"]["#btn_login"] = "Usuário e/ou senha incorretos!"; 
 			}
 		}
-
+		
 		echo json_encode($json);
 	}
 }

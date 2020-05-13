@@ -1,4 +1,4 @@
- @import "bourbon";
+
 
 body {
   background: #eee !important;  
@@ -9,13 +9,20 @@ body {
   margin-bottom: 80px;
 }
 
+.error-login{
+    color: red;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
 .form-signin {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0,0,0,0.1);  
-
+}
   .form-signin-heading,
   .checkbox {
     margin-bottom: 30px;

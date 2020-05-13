@@ -4,7 +4,7 @@ const BASE_URL = "http://localhost/gpc/";
 
 function clearErrors(){
     $(".has-error").removeClass("has-error");
-    $(".has-block").html("");
+    $(".help-block").html("");
 
 }
 
@@ -17,5 +17,5 @@ function showErrors(error_list){
 }
 
 function loadingImg(message=""){
-    return "<i class='fa fa-cicle-o-notch fa-spin'></i> " + message
+    return "<i class='fa fa-cicle fa-spin'></i> " + message;
 }
