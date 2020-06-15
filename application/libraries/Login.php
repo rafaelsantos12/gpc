@@ -2,17 +2,17 @@
  
 class Login {
  
-		function show($view, $data=array()){
+		function show($view, $login=array()){
  
 			$CI = & get_instance();
  
 			// Load header
-            $CI->load->view('login/header',$data);
+            $CI->load->view('login_template/header',$login);
             
-			$CI->load->view($view,$data);
+			$CI->load->view($view,$login);
  
 			// Load footer
-			$CI->load->view('login/footer',$data);
+			$CI->load->view('login_template/footer',$login);
 
 		}
 }
